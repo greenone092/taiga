@@ -14,9 +14,13 @@
 \newboolean{bibliography}
 \setboolean{bibliography}{false} 
 
-
+% Just standard font encoding stuff idk
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
 % Put Images, i.e. \includegraphics[width=\textwidth]{universe}
 \RequirePackage{graphicx}
+% So that hypens could wrap around urls properly. Must be put before hyperref
+\RequirePackage[hyphens]{url}
 % Produce hypertext links in the document, i.e. \href{google.com}{Google}
 \RequirePackage{hyperref}
 % Multiple columns, i.e. \begin{multicols}{2}[ %Text with 1 column] %Text to be seperated automatically by multicol \end{multicols}
