@@ -1,0 +1,125 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{taiga}[2021/02/15 Greenone092]
+
+% So that I could use some better if then code for this package implementation
+\RequirePackage{ifthen}
+\newboolean{indentfirst} 
+\setboolean{indentfirst}{false} 
+\newboolean{chemistry} 
+\setboolean{chemistry}{false} 
+\newboolean{maths} 
+\setboolean{maths}{false} 
+\newboolean{flux}
+\setboolean{flux}{false} 
+
+% Put Images, i.e. \includegraphics[width=\textwidth]{universe}
+\RequirePackage{graphicx}
+% Produce hypertext links in the document, i.e. \href{google.com}{Google}
+\RequirePackage{hyperref}
+% Multiple columns, i.e. \begin{multicols}{2}[ %Text with 1 column] %Text to be seperated automatically by multicol \end{multicols}
+\RequirePackage{multicol}
+% Sample text, i.e. \lipsum[2-4]
+\RequirePackage{lipsum}
+% \todo{Add details} 
+\RequirePackage{todonotes}
+% Provides extra symbols, e.g. arrows like \textrightarrow, \textcelsius
+\RequirePackage{textcomp}
+% Captions in tables
+\RequirePackage{caption}
+% Provides generic com­mands \degree, \celsius, \perthousand, \micro and \ohm which work both text / math modes
+\RequirePackage{gensymb}
+% \toprule, \middlerule, \bottomrule
+% X \\ \addlinespace[0.1em] Y to add space between X and Y
+% \begin{tabular}{@{}llr@{}} \end{tabular}
+\RequirePackage{booktabs}
+% For tables \begin{table}[H] so that the location is precise
+\RequirePackage{float}
+% Makes stuff look better?
+\RequirePackage{microtype}
+% \si{kg.m.s^{-1}} or \si{\kilogram\metre\per\second}
+% \num{.3e45} 
+\RequirePackage{siunitx}
+% Times font. I just really like it.
+\RequirePackage{times}
+
+% Complex options
+
+\DeclareOption{maths}{
+	\setboolean{maths}{true}
+}
+
+\DeclareOption{chemistry}{
+	\setboolean{chemistry}{true} 
+}
+
+\DeclareOption{indentfirst}{
+	\setboolean{indentfirst}{true} 
+}
+
+\DeclareOption{flux}{
+	\setboolean{flux}{true}
+}
+
+% Simple Options
+
+\DeclareOption{noindent}{
+	\setlength{\parindent}{0em}
+}
+
+\DeclareOption{tocnosections}{
+	\setcounter{tocdepth}{0}
+}
+
+\ExecuteOptions{maths, indentfirst}
+
+\ProcessOptions\relax
+
+\ifthenelse{\boolean{maths}}{
+	%Drawing graphics and Graphs
+	\RequirePackage{tikz, pgf, pgfplots}
+	%As required
+	\pgfplotsset{compat=1.15}
+	%Very useful overall, mathtools supplements amsmath
+	\RequirePackage{amsmath, amsthm, amssymb, amsfonts, mathtools}
+	
+	\theoremstyle{plain}
+	% Has the additional parameter [section] that restarts the theorem counter every section
+	% I.e. \begin{theorem}[The really good theorem] \end{theorem}
+	\newtheorem{theorem}{Theorem}[section]
+	\theoremstyle{plain}
+	% Has the additional parameter [theorem] that restarts the theorem counter every theorem
+	\newtheorem{corollary}{Corollary}[theorem]
+	\theoremstyle{plain}
+	\newtheorem{lemma}[theorem]{Lemma}
+	\theoremstyle{definition}
+	\newtheorem{definition}{Definition}[section]
+	
+	% Some nice commands
+	\newcommand{\N}{\mathbb{N}}
+	\newcommand{\Z}{\mathbb{Z}}
+	\newcommand{\Q}{\mathbb{Q}}
+	\newcommand{\R}{\mathbb{R}}
+	\newcommand{\an}{\angle}
+}{} 
+
+\ifthenelse{\boolean{chemistry}}{
+	% Display molecular formulae
+	\RequirePackage[version=4]{mhchem}
+	% Draws 2D molecules using TikZ
+	\RequirePackage{tikz}
+	\RequirePackage{chemfig}
+}{} 
+
+\ifthenelse{\boolean{indentfirst}}{
+	\RequirePackage{indentfirst}
+}{} 
+
+\ifthenelse{\boolean{flux}}{
+	\definecolor{dysname}{RGB}{29,32,33}
+	\definecolor{osyname}{RGB}{253, 246, 233} % alt. {252, 235, 225}
+	\pagecolor{osyname}
+	\color{dysname}
+}{} 
+
+
+

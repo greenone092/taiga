@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[indentfirst, chemistry, maths, flux]{taiga}
+\usepackage[utf8]{inputenc}
+
+\title{Taiga}
+\author{Toby Lam}
+\date{February 2021}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introdcution}
+
+It's basically an assortment of packages I find useful.
+
+Huge thanks to Isaac Li's plae package for inspiration.
+
+\listoftodos
+
+\section{Sample}
+
+\begin{multicols}{2}
+	\lipsum[2]
+\end{multicols}
+
+\section{Text features}
+
+\href{google.com}{Google}
+
+5 \celsius
+
+\si{\kilogram\metre\per\second}
+
+\ce{H2O}
+
+$\forall x \in \R$
+
+\section{Space-consuming features}
+
+\begin{theorem}[The really good theorem]
+    
+\end{theorem}
+
+\todo{Do something}
+
+\begin{table}[H]
+	\centering
+	\caption{Food prices}
+	\begin{tabular}{@{}llr@{}}
+		\toprule
+		\multicolumn{2}{c}{Item} \\
+		\cmidrule(r){1-2}
+		Animal      & Description   & Price (\$)\\
+		\midrule
+		Gnat        & per gram      & 13.65 \\
+		& each          & 0.01 \\
+		Gnu         & stuffed       & 92.50 \\
+		\addlinespace[0.1em]
+		Emu         & stuffed       & 33.33 \\
+		Armadillo   & frozen        & 8.99 \\ 
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+A \textrightarrow B \bigskip \bigskip
+
+
+
+
+
+
+\end{document}
