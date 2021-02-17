@@ -15,6 +15,8 @@
 \setboolean{bibliography}{false} 
 \newboolean{legacy}
 \setboolean{legacy}{false} 
+\newboolean{a4paper}
+\setboolean{a4paper}{false} 
 
 % Just standard font encoding stuff idk
 \RequirePackage[T1]{fontenc}
@@ -75,6 +77,10 @@
 
 \DeclareOption{legacy}{
 	\setboolean{legacy}{true}
+}
+
+\DeclareOption{a4paper}{
+	\setboolean{a4paper}{true}
 }
 
 % Simple Options
@@ -148,6 +154,11 @@
 \ifthenelse{\boolean{legacy}}{
 	% Many of my old documents use \ce{->} 
 	\RequirePackage[version=4]{mhchem}
+}{}
+
+\ifthenelse{\boolean{a4paper}}{
+	% Many of my old documents use \ce{->} 
+	\RequirePackage[a4paper, portrait]{geometry}
 }{}
 
 
