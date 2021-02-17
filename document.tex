@@ -10,64 +10,190 @@
 
 \maketitle
 
-\section*{Introdcution}
+\section{Introduction}
 
-It's basically an assortment of packages I find useful.
+A personal custom LaTeX Package that contains various other packages for more convenient use
 
-Huge thanks to Isaac Li's plae package for inspiration.
+\section{Packages required}
 
-\listoftodos
+\subsection{ifthen}
 
-\section{Sample}
+So that I could use some better if then code for package options implementation. May be reductant
 
-\begin{multicols}{2}
-	\lipsum[2]
-\end{multicols}
+\subsection{[T1] fontenc, [utf8] inputenc}
 
-\section{Text features}
+Just standard font encoding stuff idk
 
-\href{google.com}{Google}
+\subsection{Graphicx}
 
-5 \celsius
+Put Images, i.e.
 
-\si{\kilogram\metre\per\second}
+\begin{verbatim}
+	\includegraphics[width=\textwidth]{universe}
+\end{verbatim} 
 
-\ce{H2O}
+\subsection{[hyphens] url}
 
-$\forall x \in \R$
+So that hyphens could wrap around urls properly. Must be put before hyperref
 
-\section{Space-consuming features}
+\subsection{url}
 
-\begin{theorem}[The really good theorem]
-    
-\end{theorem}
+Produce hypertext links in the document, i.e.
 
-\todo{Do something}
+\begin{verbatim}
+	\href{google.com}{Google}
+\end{verbatim} 
 
-\begin{table}[H]
-	\centering
-	\caption{Food prices}
+\subsection{multicol}
+
+Multiple columns, i.e.
+
+\begin{verbatim}
+	\begin{multicols}{2}[ %Text with 1 column]	
+		%Text to be seperated automatically by multicol 
+	\end{multicols}
+\end{verbatim}
+
+\subsection{lipsum}
+
+Sample text, i.e.
+
+\begin{verbatim}
+	\lipsum[2-4]
+\end{verbatim}
+
+\subsection{todonotes}
+
+\begin{verbatim}
+	\todo{Add details} 
+\end{verbatim}
+
+\subsection{textcomp}
+
+Provides extra symbols, i.e.
+
+\begin{verbatim}
+	\textrightarrow, \textcelsius
+\end{verbatim}
+
+\subsection{caption}
+
+Captions in tables
+
+\subsection{gensymb}
+
+Provides generic commands which work on both text / math mode, i.e.
+
+\begin{verbatim}
+	\degree, \celsius, \perthousand, \micro and \ohm
+\end{verbatim}
+
+\subsection{booktabs}
+
+\begin{verbatim}
 	\begin{tabular}{@{}llr@{}}
-		\toprule
-		\multicolumn{2}{c}{Item} \\
-		\cmidrule(r){1-2}
-		Animal      & Description   & Price (\$)\\
-		\midrule
-		Gnat        & per gram      & 13.65 \\
-		& each          & 0.01 \\
-		Gnu         & stuffed       & 92.50 \\
-		\addlinespace[0.1em]
-		Emu         & stuffed       & 33.33 \\
-		Armadillo   & frozen        & 8.99 \\ 
-		\bottomrule
+	\toprule
+	\addlinespace[0.1em]
+	\middlerule
+	\bottomrule
 	\end{tabular}
-\end{table}
+\end{verbatim}
 
-A \textrightarrow B \bigskip \bigskip
+\subsection{float}
+
+For tables so that the location is precise
+	
+\begin{verbatim}
+	\begin{table}[H]
+\end{verbatim}
 
 
+\subsection{microtype}
 
+Make stuff look better?
 
+\subsection{siunitx}
 
+\begin{verbatim}
+	\si{kg.m.s^{-1}} or \si{\kilogram\metre\per\second}
+	\num{.3e45} 
+\end{verbatim}
+
+\subsection{times}
+
+Times font. I just really like it.
+
+\section{Options}
+
+\subsection{maths}
+
+Uses tikz, pgf and pgfplots to plot graphs. Below is required
+\begin{verbatim}
+	pgfplotsset{compat=1.15} 
+\end{verbatim}
+
+Uses all of ams packages plus mathtools which seems to makes things nicer
+
+The below means that the Y counter restarts every X.
+
+\begin{verbatim}
+	newtheorem{Y}{Y}[X]
+\end{verbatim}
+
+Here's how to use the environments for $Y \in \{ \text{theorem, lemma, definition} \}$
+
+\begin{verbatim}
+	\begin{Y}[Name of the thing]
+	\end{Y}
+\end{verbatim}
+
+There are also some nice shortcuts 
+
+\begin{verbatim}
+	\N: \mathbb{N}
+	\Z: \mathbb{Z}
+	\Q: \mathbb{Q}
+	\R: \mathbb{R}
+\end{verbatim}
+
+\subsection{chemistry}
+
+mcchem for displaying chemical formulae
+
+chemfig and tikz for drawing molecular structures
+
+\subsection{indentfirst}
+
+So that every paragraph is indented
+
+\subsection{flux}
+
+Puts a yellow tint over the entire document
+
+\subsection{bibliography}
+
+To use, create a bibliography.bib file and edit it using JabRef
+Site stuff by using 
+\begin{verbatim}
+	\cite{}
+\end{verbatim}
+At the end of the document, add 
+\begin{verbatim}
+	\bibliography{bibliography}
+\end{verbatim}
+
+\subsection{Legacy}
+
+Many of my old documents use 
+
+\begin{verbatim}
+	\ce{->}
+\end{verbatim}
+
+So I included mcchem
+
+\subsection{a4paper}
+
+Uses geometry to make the margins more suited for a4
 
 \end{document}
