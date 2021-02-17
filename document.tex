@@ -2,7 +2,7 @@
 \usepackage[indentfirst, chemistry, maths, flux]{taiga}
 \usepackage[utf8]{inputenc}
 
-\title{Taiga}
+\title{taiga}
 \author{Toby Lam}
 \date{February 2021}
 
@@ -12,7 +12,11 @@
 
 \section{Introduction}
 
-A personal custom LaTeX Package that contains various other packages for more convenient use
+A personal custom LaTeX Package that contains various other packages for more convenient use.
+
+Below is an explanation of the code written in taiga.sty and possible use cases for it.
+
+Disclaimer: This package was intended for personal use and this "manual" is far from complete / ideal.
 
 \section{Packages required}
 
@@ -22,7 +26,7 @@ So that I could use some better if then code for package options implementation.
 
 \subsection{[T1] fontenc, [utf8] inputenc}
 
-Just standard font encoding stuff idk
+Just standard font encoding.
 
 \subsection{Graphicx}
 
@@ -34,9 +38,9 @@ Put Images, i.e.
 
 \subsection{[hyphens] url}
 
-So that hyphens could wrap around urls properly. Must be put before hyperref
+So that hyphens could wrap around urls properly. Must be put before hyperref.
 
-\subsection{url}
+\subsection{hyperref}
 
 Produce hypertext links in the document, i.e.
 
@@ -78,7 +82,7 @@ Provides extra symbols, i.e.
 
 \subsection{caption}
 
-Captions in tables
+Captions in tables.
 
 \subsection{gensymb}
 
@@ -101,7 +105,7 @@ Provides generic commands which work on both text / math mode, i.e.
 
 \subsection{float}
 
-For tables so that the location is precise
+For tables so that the location is precise.
 	
 \begin{verbatim}
 	\begin{table}[H]
@@ -147,7 +151,7 @@ Here's how to use the environments for $Y \in \{ \text{theorem, lemma, definitio
 	\end{Y}
 \end{verbatim}
 
-There are also some nice shortcuts 
+There are also some nice shortcuts,
 
 \begin{verbatim}
 	\N: \mathbb{N}
@@ -158,17 +162,17 @@ There are also some nice shortcuts
 
 \subsection{chemistry}
 
-mcchem for displaying chemical formulae
+mcchem for displaying chemical formulae.
 
-chemfig and tikz for drawing molecular structures
+chemfig and tikz for drawing molecular structures.
 
 \subsection{indentfirst}
 
-So that every paragraph is indented
+So that every paragraph is indented.
 
 \subsection{flux}
 
-Puts a yellow tint over the entire document
+Puts a yellow tint over the entire document.
 
 \subsection{bibliography}
 
@@ -182,7 +186,7 @@ At the end of the document, add
 	\bibliography{bibliography}
 \end{verbatim}
 
-\subsection{Legacy}
+\subsection{legacy}
 
 Many of my old documents use 
 
@@ -190,18 +194,18 @@ Many of my old documents use
 	\ce{->}
 \end{verbatim}
 
-So I included mcchem
+So I included mcchem.
 
 \subsection{a4paper}
 
-Uses geometry to make the margins more suited for a4
+Uses geometry to make the margins more suited for a4.
 
 \subsection{noindent}
 
-No indent for all paragraphs
+No indent for all paragraphs.
 
 \subsection{tocnosections}
 
-Only parts and chapters would be displayed in table of content
+Only parts and chapters would be displayed in table of content.
 
 \end{document}
