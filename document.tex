@@ -28,9 +28,13 @@ So that I could use some better if then code for package options implementation.
 
 Just standard font encoding.
 
+inputenc allows the user to input accented characters directly from the keyboard; 
+
+fontenc is oriented to output, that is, what fonts to use for printing characters. T1 supports accented characters used by the most widespread European languages
+
 \subsection{Graphicx}
 
-Put Images, i.e.
+Put images, i.e.
 
 \begin{verbatim}
 	\includegraphics[width=\textwidth]{universe}
@@ -68,6 +72,8 @@ Sample text, i.e.
 
 \subsection{todonotes}
 
+To add to do notes
+
 \begin{verbatim}
 	\todo{Add details} 
 \end{verbatim}
@@ -94,6 +100,8 @@ Provides generic commands which work on both text / math mode, i.e.
 
 \subsection{booktabs}
 
+Add "rules" to tables
+
 \begin{verbatim}
 	\begin{tabular}{@{}llr@{}}
 	\toprule
@@ -114,9 +122,13 @@ For tables so that the location is precise.
 
 \subsection{microtype}
 
-Make stuff look better?
+Subliminal refinements towards typographical perfection.
+
+Let's just leave it at that...
 
 \subsection{siunitx}
+
+Adds support to SI units
 
 \begin{verbatim}
 	\si{kg.m.s^{-1}} or \si{\kilogram\metre\per\second}
@@ -198,7 +210,7 @@ So I included mcchem.
 
 \subsection{a4paper}
 
-Uses geometry to make the margins more suited for a4.
+Uses the package geometry to make the margins more suited for a4.
 
 \subsection{noindent}
 
