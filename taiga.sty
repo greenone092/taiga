@@ -16,7 +16,8 @@
 \setboolean{legacy}{false} 
 \newboolean{a4paper}
 \setboolean{a4paper}{false} 
-
+\newboolean{futura}
+\setboolean{futura}{false} 
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
@@ -65,6 +66,12 @@
 	\setboolean{a4paper}{true}
 }
 
+\DeclareOption{futura}{
+	\setboolean{futura}{true}
+}
+
+\ExecuteOptions{a4paper,maths}
+
 % Simple Options
 
 \DeclareOption{noindent}{
@@ -74,8 +81,6 @@
 \DeclareOption{tocnosections}{
 	\setcounter{tocdepth}{0}
 }
-
-\ExecuteOptions{indentfirst}
 
 \ProcessOptions\relax
 
@@ -127,6 +132,11 @@
 
 \ifthenelse{\boolean{a4paper}}{
 	\RequirePackage[a4paper, portrait]{geometry}
+}{}
+
+\ifthenelse{\boolean{futura}}{
+	\Requirepackage{fontspec}
+	\setmainfont{Futura Medium}[ItalicFont={Futura Medium Italic}]
 }{}
 
 
